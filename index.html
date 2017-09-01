@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CPU Scheduling Algorithm</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/aos.css">
+	<script type="text/javascript" src="lib/aos.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/jquery.color.js"></script>
+	<script type="text/javascript" src="lib/randomColor.js"></script>
+
+
+<style type="text/css">
+
+a:hover, a:focus { 
+	text-decoration: none;
+}
+
+
+p {
+	font-size: 1.2em;
+	width: 80%;
+}
+
+img {
+	width: 40%;
+	box-shadow: 1px 1px 30px black;
+	border-radius: 20px;
+}
+
+</style>
+
+</head>
+<body>
+
+  <script>
+    AOS.init();
+  </script>
+
+<div class="container">
+<div class="row-lg-12">
+<div class="col-lg-8">
+<center><br/><br/><br/>
+
+<div data-aos="zoom-out" data-aos-duration="1000">
+<img src="lib/logo.jpg"><br/><br/>
+</div>
+
+<div data-aos="zoom-out" data-aos-duration="1300">
+<h1> CPU Scheduling Algorithm Simulation </h1><br/>
+</div>
+
+<div data-aos="zoom-out" data-aos-duration="1500">
+<p>CPU scheduling is a process which allows one process to use the CPU while the execution of another process is on hold(in waiting state) due to unavailability of any resource like I/O etc, thereby making full use of CPU. The aim of CPU scheduling is to make the system efficient, fast and fair.</p><br/>
+
+<h3>Submitted by:</h3>
+| Jeric Guillermo | Joshua Angtia | Bernard Apostol | <br/>
+Roxan De Guzman and Marisol Capili<br/><br/>
+<b>BSIT 3H-G2</b>
+
+
+
+</div>
+</div>
+<div class="col-lg-4">
+<div data-aos="zoom-out" data-aos-duration="1500">
+<br/>
+<center><h2><i class="fa fa-automobile fa-4x"></i></h2></center><br/>
+<a href="FCFS.html"><input type="button" class="btn btn-primary btn-lg btn-block" value="FCFS Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+<a href="SJF.html"><input type="button" class="btn btn-warning btn-lg btn-block" value="SJF Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+<a href="SRTF.html"><input type="button" class="btn btn-info btn-lg btn-block" value="SRTF Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+
+<a href="Priority.html"><input type="button" class="btn btn-danger btn-lg btn-block" value="Priority Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+
+<a href="preemptive-priority.html"><input type="button" class="btn btn-primary btn-lg btn-block" value="Pre-emptive Priority Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+
+<a href="Round-robin.html"><input type="button" class="btn btn-success btn-lg btn-block" value="Round-Robin Scheduling" style="box-shadow: 5px 5px 20px black"></a> <br/>
+<br/>
+
+</center>
+</div>
+</div>
+</div>
+
+<script>
+
+$(document).ready(function()
+{
+
+function change_random_bgcolor(change_time) {
+setInterval(function change_color() {
+    $("body").animate({
+        backgroundColor: randomColor()
+    }, 10000);
+}, change_time);
+}
+change_random_bgcolor(1000);
+});
+
+
+</script>
+
+
+</body>
+</html>

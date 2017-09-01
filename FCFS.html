@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FCFS Scheduling Algorithm</title>
+
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/jquery.color.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/aos.css">
+	<script type="text/javascript" src="lib/aos.js"></script>
+
+<style type="text/css">
+	body {
+	    background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); 
+        background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
+	}
+
+	td {
+		text-align: center;
+		vertical-align: middle;
+
+	}
+
+	img {
+		width: 5%;
+		margin-left: -30px;
+	}
+
+
+</style>
+
+</head>
+<body>
+
+  <script>
+    AOS.init({
+    	duration: 1000
+    });
+  </script>
+
+<br/><br/>
+<div class="container">
+<div data-aos="zoom-out-left">
+<h1><a href="index.html"><img src="lib/icon.png" /></a> FCFS Scheduling Algorithm</h1><br/><br/>
+</div>	
+<div data-aos="fade-left">
+<strong>Enter number of program:</strong> 
+<div class="row-lg-12">
+<div class="col-lg-3">
+<input type="" id="count" class="form-control">
+</div></div>
+<input type="button" id="ok" value="Show Programs" class="btn btn-warning">
+<input type="button" value="RUN PROCESS" id="run" class="btn btn-danger"><br/>
+<br/>
+<p> <b>Programs</b> </p>
+<br/><br/>
+<table border="2" width="900px" style="box-shadow: 10px 10px 20px black;">
+
+</table>
+</div>
+<br/><br/><br/><br/>
+<script type="text/javascript">
+	
+$("#ok").click(function(){
+
+
+	// generate ng input box
+	c = $("#count").val();
+
+	for (var i = 1; i <= c; i++){
+
+		$("p").append('<br/><div class="row-lg-12"><div data-aos="fade-right"><div class="container"><div class="col-lg-2">Program ' + i + ' - Bursttime </div><div class="col-lg-3"><input type="text" id="b'+i+'" class="form-control	"></div></div></div></div>');
+		$("table").append('<td id="td'+i+'"></td>');
+	}
+
+});
+
+
+$("#run").click(function(){
+
+	val = 0;
+	arr = Array();
+
+	//para sa pag sum ng lahat ng value sa textbox
+	for (var i = 1; i <= c; i++) {
+	 
+	 $("#b"+i+"").each(function() {      
+    	val +=parseInt($(this).val());
+ 		});  	
+
+	 arr[+i] = $("#b"+i+"").val();
+
+	}
+		total = val;
+
+
+	// para sa pagkuha ng percent
+	for (var i = 1; i <= c; i++) {
+
+		y = arr[i];
+		x = total;
+		console.log(arr[i] = Math.floor((y/x)*100));
+	} 
+
+
+	// pag change the background color ng td
+	col = Array("#89070b","#d06960","#e8d568","#2bb1e0","#fea45d","#fd6c3d","#b9353a","#b86a30","#f4c685","#8c6f50","#6e6e71","#ffc296","#cbe6ea","#30688b","#476663","#8a0001","#d76001","#eacb86","#f1cbff","#c9c9ff","#ffbdbd","#e1f7d5","#d9d7d8","#bcd7cf","#f8dfca","#d6928b","#e8e1d7","#e9b481","#ea5c7d","#edbcc0","#e9b481","#d9d7d8","#bcd7cf","#f8dfca","#d6928b","#e8e1d7","#e9b481","#ea5c7d","#edbcc0","#e9b481");
+	sum = 0;
+	
+	i = 1; // loop the animation
+
+	myLoop();
+
+	function myLoop(){
+
+		setTimeout(function(){
+
+	console.log(i);
+	console.log(c);		
+	sum+=parseInt($("#b"+i+"").val());	
+	$("#td"+i+"").replaceWith('<td style="background-color: '+col[Math.floor(Math.random() * col.length)]+'" height="100px" width="'+arr[i]+'%">P'+i+': Value: '+sum+'</td>');
+
+	i++;
+
+			if(i <= c) {
+				myLoop();
+			}
+
+		},1000)
+	}
+
+
+});
+
+	
+
+
+</script>
+
+</body>
+</html>
